@@ -1,4 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[🚀 Try ChatDoc AI Live](https://chatdoc-ai.streamlit.app/)
 
 # ChatDoc AI
 
