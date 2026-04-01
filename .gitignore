@@ -1,0 +1,26 @@
+# Secrets
+.env
+.env.*
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+
+# Session/user generated data
+session_data/
+vector_store/
+data/
+
+# Tooling / editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
