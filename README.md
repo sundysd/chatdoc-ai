@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 # ChatDoc AI
 
 > Your personal AI assistant that can chat, summarize documents, generate code, and more — all in one Streamlit app.
