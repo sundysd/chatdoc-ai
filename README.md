@@ -1,70 +1,106 @@
 # ChatDoc AI
 
-ChatDoc AI is a secure, multi-document RAG assistant built with Streamlit.
+> Your personal AI assistant that can chat, summarize documents, generate code, and more — all in one Streamlit app.
 
-Users bring their own OpenAI API key, upload documents, and chat with grounded answers in a clean, interactive interface.
+---
 
-## Features
+## 🚀 Features
 
-- Bring your own API key (BYOK) directly in the UI
-- Session isolation for key, files, vector store, and chat history
-- Multi-file upload: TXT, PDF, CSV, XLSX, XLS
-- Streaming responses for real-time output
-- Token usage and estimated cost per answer
-- Custom system prompt with ready-to-use prompt presets
-- Regenerate last response with different model/temperature
-- Follow-up question suggestions after each answer
-- Sidebar document metadata, previews, and download actions
+* **Chat Memory (Multi-turn Conversation):** AI remembers previous interactions for coherent conversations.
+* **Multiple Document Support:** Upload and query across PDFs, CSVs, and text files simultaneously.
+* **Drag & Drop UI:** Smooth, intuitive interface for uploading multiple files effortlessly.
+* **Semantic Search:** Finds the most relevant chunks of text based on your question.
+* **AI Summarization:** Summarize large documents or notes in seconds.
+* **Code Execution & Debugging:** Run Python snippets safely with automated error handling.
+* **Hallucination-Safe RAG Mode:** Uses Retrieval-Augmented Generation (RAG) for citation-backed answers.
 
-## Project Structure
+---
 
-```text
+## 📂 Project Structure
+
+```
 chatdoc-ai/
-	app.py
-	rag_pipeline.py
-	utils.py
-	requirements.txt
-	README.md
+│
+├─ app.py                 # Main Streamlit app
+├─ utils.py               # Helper functions (file handling, session management)
+├─ rag_pipeline.py        # RAG & vector DB logic
+├─ session_data/          # Session-specific vector DB and uploaded files
+├─ requirements.txt       # Python dependencies
+├─ README.md              # Project description & instructions
+└─ sample_data/           # Example PDFs, CSVs, text files
 ```
 
-## Installation
+---
+
+## 💻 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/sundysd/chatdoc-ai.git
+cd chatdoc-ai
+```
+
+2. Create a virtual environment:
 
 ```bash
 python -m venv venv
-venv\Scripts\activate
+source venv/bin/activate  # Linux / Mac
+venv\Scripts\activate     # Windows
+```
+
+3. Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-## Run Locally
+---
+
+## ⚡ Usage
+
+Run the Streamlit app:
 
 ```bash
 streamlit run app.py
 ```
 
-## Usage Flow
+* Drag & drop your files to upload multiple documents at once.
+* Start chatting — the AI remembers previous conversation turns.
+* Switch to **Hallucination-Safe RAG** mode for citation-backed answers.
+* Ask code-related questions and see auto-debugged results.
 
-1. Enter your OpenAI API key.
-2. Upload one or more documents.
-3. Click Build Knowledge Base.
-4. Ask questions in chat.
-5. Optionally tune model settings and regenerate responses.
+---
 
-## Security Model
+## 🧠 How It Works
 
-- API keys are not shared across users.
-- Uploaded files are stored per session folder.
-- Vector databases are session-scoped.
-- Conversation history is session-scoped.
+1. **Document Loading & Splitting:** Supports TXT, PDF, CSV, XLSX/XLS files and splits them into manageable chunks.
+2. **Vector Embeddings:** Uses OpenAI embeddings to convert chunks into vector representations.
+3. **Vector DB & Semantic Search:** FAISS database retrieves the most relevant document chunks based on your query.
+4. **AI Response Generation:** Combines user query + retrieved context to generate accurate answers.
+5. **Multi-turn Chat Memory:** Maintains session-based conversation history.
+6. **Follow-up Suggestions:** Generates 3 suggested follow-up questions for better exploration of content.
 
-## Deploy on Streamlit Cloud
+---
 
-1. Push this project to GitHub.
-2. Create a new Streamlit Cloud app from the repository.
-3. Set the app entry file to app.py.
-4. Deploy.
+## 📈 Why This Project Stands Out
 
-No global OpenAI key is required because each user enters their own key.
+* Production-ready architecture for real-world use.
+* Multi-document support and multi-turn chat for a rich experience.
+* Smooth drag & drop UI for seamless interaction.
+* AI features beyond simple Q&A: summarization, code generation, debugging.
 
-## Suggested Repository Name
+---
 
-chatdoc-ai
+## 🛠 Future Improvements
+
+* Add **voice input/output** for a conversational assistant.
+* Integrate **more AI models** for specialized tasks.
+* Enhance **UI customization** and theme options.
+
+---
+
+## 👤 Author
+
+**Di Sun** – AI Developer & Portfolio Enthusiast
+[LinkedIn](https://www.linkedin.com/in/yourprofile) | [GitHub](https://github.com/sundysd)
